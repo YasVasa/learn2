@@ -1,0 +1,13 @@
+<html>
+    <title>Стоматологічна клініка</title>
+    <h1>Studio Vita</h1>
+
+    <div class="article-list">
+        {%for article in articles %}
+            <div class="article">
+                <h2 class="article-title">{{article.title}}</h2>
+                <p class="articale-summary">{{article.summary}}</p>
+            </div>
+        {% endfor %}        
+    </div>
+</html>

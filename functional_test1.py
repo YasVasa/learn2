@@ -26,12 +26,19 @@ class BasicInstallTest(unittest.TestCase):
         self.assertIn("Studio Vita", header.text)  
         #self.fail("Finish the test!")  
 
-    def test_home_page_ponts(self):
-        # під заголовкома є пункти переваг 
+    def test_home_page_blog(self):
         self.browser.get("http://127.0.0.1:8000")
-        points  = self.browser.find_element_by_class_name('points')
-        self.assertTrue(points)
+        article_list = self.browser.find_element_by_class_name('article-list')
+        self.assertTrue(article_list)
 
-        
+    def test_home_page_articles_look_correct(self):
+        self.browser.get("http://127.0.0.1:8000")
+        article_title = self.browser.find_element_by_class_name('article-title')
+        article_summary = self.browser.find_element_by_class_name('article-summary')
+        self.assertTrue(article_title) 
+        self.assertTrue(article_summary)   
+
+
+
 if __name__ == "__main__":  
     unittest.main()  
