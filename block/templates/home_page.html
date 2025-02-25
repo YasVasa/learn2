@@ -1,13 +1,24 @@
-<html>
-    <title>Стоматологічна клініка</title>
-    <h1>Studio Vita</h1>
+{% extends 'base.html' %}
+{% load static %}
 
-    <div class="article-list">
-        {%for article in articles %}
-            <div class="article">
-                <h2 class="article-title">{{article.title}}</h2>
-                <p class="articale-summary">{{article.summary}}</p>
-            </div>
-        {% endfor %}        
+{% block title %}Стоматологічна клініка{% endblock %}
+
+{% block content %}
+
+
+<div class="row">
+    <div class="col-md-8 col-sm-12">
+        <div class="article-list">
+            {%for article in articles %}
+                <div class="article">
+                    <h2 class="article-title">
+                        <a href="{{ article.get_absolute_url }}">{{article.title}}</a>
+                    </h2>
+                    <p class="article-summary">{{article.summary}}</p>
+                </div>
+            {% endfor %}        
+        </div>
     </div>
-</html>
+</div>
+
+{% endblock %}

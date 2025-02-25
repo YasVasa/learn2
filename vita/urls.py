@@ -20,5 +20,9 @@ from block import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home_page),
+    path('', views.home_page, name='home_page'),
+    path('block/<slug:slug>', views.article_page, name='article_page'),
+    path('team/', views.team, name='team'),
+    path('contacts/', views.contacts, name='contacts'),
+    path('about/', views.about, name='about'),
 ]
